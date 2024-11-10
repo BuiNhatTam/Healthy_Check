@@ -32,7 +32,7 @@ Before you start, ensure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/healthy-check.git
+   git clone https://github.com/BuiNhatTam/Healthy_Check.git
 2. **Install dependencie**:
    ```bash
    cd healthy-check
