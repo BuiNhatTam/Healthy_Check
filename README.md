@@ -32,4 +32,13 @@ Before you start, ensure you have the following installed:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/healthy-check.git  
+   git clone https://github.com/yourusername/healthy-check.git
+2. **Install dependencie**:
+   ```bash
+   cd healthy-check
+    npm install
+3.**Start the development server**:
+  ```bash
+  npm start
+
+
