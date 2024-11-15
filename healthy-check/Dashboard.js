@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
-
+import { View, Text, StyleSheet, ScrollView, Image, TouchableOpacity,Button } from 'react-native';
+import Footer from './Footer';
 const Dashboard = ({ navigation }) => {
 const [currentDate, setCurrentDate] = useState('');
 
@@ -13,12 +13,6 @@ useEffect(() => {
 }, []);
 return (
     <View style={styles.container}>
-    <TouchableOpacity
-        style={styles.backButton}
-        onPress={() => navigation.goBack()}
-    >
-    <Text style={styles.backButtonText}>← Back</Text>
-    </TouchableOpacity>
     {/* Phần avatar cố định */}
     <View style={styles.fixedHeader}>
     <Image source={require('./assets/avatar.jpg')} style={styles.profileImage} />
@@ -31,7 +25,7 @@ return (
     {/* Nội dung cuộn */}
     <ScrollView style={styles.content}>
       {/* Phần tiêu đề và nút All data */}
-        <TouchableOpacity style={styles.allDataButton}>
+        <TouchableOpacity style={styles.allDataButton} onPress={() => navigation.navigate('HealthDashboard')}>
         <Text style={styles.allDataText}>All data</Text>
         </TouchableOpacity>
         {/* Health Score */}
@@ -48,9 +42,9 @@ return (
     <Text style={styles.sectionTitle}>Highlights</Text>
     <Text style={styles.viewMore}>View more ›</Text>
     <View style={styles.highlights}>
-        <View style={[styles.highlightBox, { backgroundColor: '#00C2FF' }]}>
-            <Image source={require('./assets/run.png')} style={styles.highlightImage} />
-            <Text style={styles.highlightText}>Steps</Text>
+        <View style={[styles.highlightBox, { backgroundColor: '#00C2FF' }]} >
+            <Image source={require('./assets/run.png')} style={styles.highlightImage}  />
+            <Text style={styles.highlightText} onPress={() => navigation.navigate('StepDetailsScreen')} >Steps</Text>
             <Text style={styles.highlightValue}>11,857</Text>
             <Text style={styles.updateTime}>updated 15 min ago</Text>
         </View>
@@ -127,20 +121,7 @@ return (
     </ScrollView>
 
       {/* Fixed Footer */}
-    <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Overview')}>
-        <Image source={require('./assets/iconoverview.jpg')} style={styles.icon} />
-        <Text style={styles.activeText}>Overview</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Explore')}>
-        <Image source={require('./assets/iconexplore.jpg')} style={styles.icon} />
-        <Text style={styles.inactiveText}>Explore</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Sharing')}>
-        <Image source={require('./assets/iconshare.png')} style={styles.icon} />
-        <Text style={styles.inactiveText}>Sharing</Text>
-        </TouchableOpacity>
-    </View>
+      <Footer navigation={navigation} activeTab="Overview" />
     </View>
 );
 };

@@ -8,6 +8,8 @@ import SignInScreen from './SignInScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
 import SignUpScreen from './SignUpScreen';
 import Dashboard from './Dashboard';
+import HealthDashboard from './HealthDashboard';
+import StepDetailsScreen from './StepDetailsScreen';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -17,23 +19,27 @@ export default function App() {
         <Stack.Screen 
           name="SignIn" 
           component={SignInScreen} 
-          options={{ headerShown: false }}
         />
         <Stack.Screen 
           name="ForgotPassword" 
           component={ForgotPasswordScreen} 
-          options={{ headerShown: false }}
         />
         <Stack.Screen 
           name="SignUp" 
           component={SignUpScreen} 
-          options={{ headerShown: false }}
         />
          <Stack.Screen 
           name="Dashboard" 
           component={Dashboard} 
-          options={{ headerShown: false }}
+         
         />
+        <Stack.Screen 
+          name="HealthDashboard" 
+          component={HealthDashboard} 
+
+        />
+        <Stack.Screen name="StepDetailsScreen" 
+        component={StepDetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
