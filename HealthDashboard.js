@@ -22,6 +22,18 @@ const HealthDashboard = ({ navigation }) => {
               // Nếu là mục "Steps", điều hướng đến màn hình "StepDetailsScreen"
               navigation.navigate('StepDetailsScreen');
             }
+            else if (item.title === 'Sleep') {
+              // Nếu là mục "Sleep
+              navigation.navigate('SleepTrackerScreen');
+            }
+            else if (item.title === 'Cycle Tracking') {
+              // Nếu là mục "Cycle Tracking"
+              navigation.navigate('CycleTrackerScreen');
+            }
+            else if (item.title === 'Nutrition') {
+              // Nếu là mục "Nutrition"
+              navigation.navigate('NutritionTracker');
+            }
           }}
         >
           {/* Vòng tròn màu với hình ảnh bên trong */}

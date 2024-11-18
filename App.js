@@ -10,6 +10,9 @@ import SignUpScreen from './SignUpScreen';
 import Dashboard from './Dashboard';
 import HealthDashboard from './HealthDashboard';
 import StepDetailsScreen from './StepDetailsScreen';
+import SleepTrackerScreen from './SleepTrackerScreen ';
+import CycleTrackerScreen from './CycleTrackerScreen';
+import NutritionTracker from './NutritionTracker';
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -36,10 +39,16 @@ export default function App() {
         <Stack.Screen 
           name="HealthDashboard" 
           component={HealthDashboard} 
-
         />
         <Stack.Screen name="StepDetailsScreen" 
         component={StepDetailsScreen} />
+
+        <Stack.Screen name="SleepTrackerScreen" 
+        component={SleepTrackerScreen} />
+         <Stack.Screen name="CycleTrackerScreen" 
+        component={CycleTrackerScreen} />
+          <Stack.Screen name="NutritionTracker" 
+        component={NutritionTracker} />
       </Stack.Navigator>
     </NavigationContainer>
   );

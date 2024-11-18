@@ -50,19 +50,19 @@ return (
         </View>
         <View style={[styles.highlightBox, { backgroundColor: '#FF6B6B' }]}>
             <Image source={require('./assets/calender.jpg')} style={styles.highlightImage} />
-            <Text style={styles.highlightText}>Cycle tracking</Text>
+            <Text style={styles.highlightText} onPress={() => navigation.navigate('CycleTrackerScreen')} >Cycle tracking</Text>
             <Text style={styles.highlightValue}>12 days before period</Text>
             <Text style={styles.updateTime}>updated 30 min ago</Text>
         </View>
         <View style={[styles.highlightBox, { backgroundColor: '#2C3E50' }]}>
             <Image source={require('./assets/slepp.png')} style={styles.highlightImage} />
-            <Text style={styles.highlightText}>Sleep</Text>
+            <Text style={styles.highlightText} onPress={() => navigation.navigate('SleepTrackerScreen')}>Sleep</Text>
             <Text style={styles.highlightValue}>7 h 31 min</Text>
             <Text style={styles.updateTime}>updated a day ago</Text>
         </View>
         <View style={[styles.highlightBox, { backgroundColor: '#F39C12' }]}>
             <Image source={require('./assets/Nutrition.png')} style={styles.highlightImage} />
-            <Text style={styles.highlightText}>Nutrition</Text>
+            <Text style={styles.highlightText} onPress={() => navigation.navigate('NutritionTracker')}>Nutrition</Text>
             <Text style={styles.highlightValue}>960 kcal</Text>
             <Text style={styles.updateTime}>updated 5 min ago</Text>
         </View>
