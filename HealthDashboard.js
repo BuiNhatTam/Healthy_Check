@@ -30,9 +30,21 @@ const HealthDashboard = ({ navigation }) => {
               // Nếu là mục "Cycle Tracking"
               navigation.navigate('CycleTrackerScreen');
             }
-            else if (item.title === 'Nutrition') {
+            else if (item.title === 'Burned Calories') {
               // Nếu là mục "Nutrition"
               navigation.navigate('NutritionTracker');
+            }
+            else if (item.title === 'Body Mass Index') {
+              // Nếu là mục "Body Mass Index"
+              navigation.navigate('BMI');
+            }
+            else if (item.title === 'Heart') {
+              // Nếu là mục "Heart"
+              navigation.navigate('HeartRateMonitor');
+            }
+            else if (item.title === 'Double Support Time') {
+              // Nếu là mục "Double Support Time"
+              navigation.navigate('DoubleSupportTime');
             }
           }}
         >

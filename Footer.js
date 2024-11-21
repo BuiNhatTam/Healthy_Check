@@ -4,15 +4,15 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 const Footer = ({ navigation, activeTab }) => {
     return (
         <View style={styles.footer}>
-            <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Overview')}>
+            <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Dashboard')}>
                 <Image source={require('./assets/iconoverview.jpg')} style={styles.icon} />
                 <Text style={activeTab === 'Overview' ? styles.activeText : styles.inactiveText}>Overview</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Explore')}>
+            <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('ExploreScreen')}>
                 <Image source={require('./assets/iconexplore.jpg')} style={styles.icon} />
                 <Text style={activeTab === 'Explore' ? styles.activeText : styles.inactiveText}>Explore</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('Sharing')}>
+            <TouchableOpacity style={styles.footerItem} onPress={() => navigation.navigate('SharingScreen')}>
                 <Image source={require('./assets/iconshare.png')} style={styles.icon} />
                 <Text style={activeTab === 'Sharing' ? styles.activeText : styles.inactiveText}>Sharing</Text>
             </TouchableOpacity>

@@ -5,21 +5,21 @@ import { LineChart } from 'react-native-chart-kit';
 const StepDetailsScreen = () => {
   return (
     <View style={styles.container}>
-      {/* Tiêu đề */}
+      {/* Title */}
       <Text style={styles.title}>Steps</Text>
 
-      {/* Mục tiêu */}
+      {/* Goal */}
       <Text style={styles.goalText}>
         You have achieved <Text style={styles.percentageText}>80%</Text> of your goal today
       </Text>
 
-      {/* Vòng tròn tiến độ */}
+      {/* Progress Circle (using a styled view for now) */}
       <View style={styles.progressContainer}>
         <Text style={styles.stepCount}>11,857</Text>
         <Text style={styles.stepGoalText}>Steps out of 18k</Text>
       </View>
 
-      {/* Các thông số bổ sung */}
+      {/* Stats Section */}
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Text style={styles.statText}>850 kcal</Text>
@@ -32,7 +32,7 @@ const StepDetailsScreen = () => {
         </View>
       </View>
 
-      {/* Biểu đồ */}
+      {/* Line Chart */}
       <LineChart
         data={{
           labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
@@ -42,20 +42,21 @@ const StepDetailsScreen = () => {
             }
           ]
         }}
-        width={Dimensions.get("window").width - 16} // from react-native
+        width={Dimensions.get("window").width - 16}
         height={220}
         yAxisLabel=""
         yAxisSuffix="k"
-        yAxisInterval={1} // optional, defaults to 1
+        yAxisInterval={1}
         chartConfig={{
-          backgroundColor: "#e26a00",
-          backgroundGradientFrom: "#fb8c00",
-          backgroundGradientTo: "#ffa726",
-          decimalPlaces: 2, // optional, defaults to 2dp
+          backgroundColor: "#4F83CC",
+          backgroundGradientFrom: "#6C9BDC",
+          backgroundGradientTo: "#7AABF6",
+          decimalPlaces: 2,
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           style: {
-            borderRadius: 16
+            borderRadius: 16,
+            paddingRight: 10
           },
           propsForDots: {
             r: "6",
@@ -64,10 +65,7 @@ const StepDetailsScreen = () => {
           }
         }}
         bezier
-        style={{
-          marginVertical: 8,
-          borderRadius: 16
-        }}
+        style={styles.chartStyle}
       />
     </View>
   );
@@ -76,19 +74,22 @@ const StepDetailsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    paddingLeft: 10,
     backgroundColor: '#fff',
+    justifyContent: 'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
     textAlign: 'center',
+    color: '#4F83CC', // Add color for more contrast
   },
   goalText: {
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 20,
+    color: '#4F83CC',
   },
   percentageText: {
     fontWeight: 'bold',
@@ -101,6 +102,7 @@ const styles = StyleSheet.create({
   stepCount: {
     fontSize: 48,
     fontWeight: 'bold',
+    color: '#4F83CC',
   },
   stepGoalText: {
     fontSize: 18,
@@ -117,7 +119,16 @@ const styles = StyleSheet.create({
   statText: {
     fontSize: 18,
     fontWeight: 'bold',
+    color: '#4F83CC',
   },
+  chartStyle: {
+    marginVertical: 8,
+    borderRadius: 16,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+  }
 });
 
 export default StepDetailsScreen;
